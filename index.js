@@ -13,12 +13,13 @@ client.on("message", msg =>{
   
         switch(stat){
           case "roll":
-            var num = 0;
+            var num = dice();
             function dice(){
               let res = mesg.substring(5)
-              var num = Math.ceil(Math.random()*res);
+              let num = Math.ceil(Math.random()*res);
+              return num;
             }
-            dice();
+            
             msg.channel.send(num);
             break;
         }

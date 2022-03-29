@@ -8,13 +8,17 @@ client.once('ready', () => {
 client.on("message", msg =>{
         var mesg = msg.content;
         if(mesg.includes("+roll") === true){
-          var stat = "roll";
+          var stat = "roll"; 
         }
   
         switch(stat){
           case "roll":
-            let res = mesg.substring(5)
-            let num = Math.ceil(Math.random()*res);
+            var num = 0;
+            function dice(){
+              let res = mesg.substring(5)
+              var num = Math.ceil(Math.random()*res);
+            }
+            dice();
             msg.channel.send(num);
             break;
         }

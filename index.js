@@ -3,12 +3,13 @@ const client = new Discord.Client();
 
 client.once('ready', () => {
   console.log('We are online!');
+  client.user.setActivity('computer sounds',{ type: "WATCHING"}).catch(console.error);
 });
 
 client.on("message", msg => {
   var mesg = msg.content;
   if (mesg.includes("+roll") === true) {
-    var stat = "roll"; //set msg stat to roll
+    var stat = "roll"; //set msg status to roll
   }
 
   switch (stat) {
